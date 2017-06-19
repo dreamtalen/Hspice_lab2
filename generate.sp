@@ -29,7 +29,7 @@ VCLK CLK GND PULSE 0 'SUPPLY' 50ps 10ps 10ps 480ps 1ns
 VINA A GND PULSE 0 'SUPPLY' 50ps 10ps 10ps 1980ps 4ns
 VINB B GND PULSE 0 'SUPPLY' 50ps 10ps 10ps 3980ps 8ns
 
-.tran 1ps 32ns 
+.tran 1ps 16ns 
 .op all 
 
 .end
