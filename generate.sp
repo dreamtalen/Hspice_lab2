@@ -5,8 +5,8 @@
 .TEMP 85
 .param supply=0.85
 
-.param finp=1
-.param finn=1
+.param finp=2
+.param finn=30
 .param length=20n
 .param times_stable = 1
 
