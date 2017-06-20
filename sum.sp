@@ -55,5 +55,6 @@ VINS1 S1 GND PULSE 0 'SUPPLY' 2050ps 15ps 15ps 1970ps 4ns
 .op all 
 .measure TRAN power_vdd AVG P(VDD) FROM=0ns TO=4ns
 .measure TRAN power_gnd AVG P(GND) FROM=0ns TO=4ns
+.measure TRAN power_vss AVG P(VSS) FROM=0ns TO=4ns
 
 .end
