@@ -3,7 +3,7 @@
 .options acct list post runlvl=6
 .global vdd gnd
 .TEMP 85
-.param supply=1.2
+.param supply=0.85
 
 .param finp=10
 .param finn=30
@@ -16,9 +16,9 @@ xpmos Y A VDD VDD lpfet l=length nfin=nfinp
 .ENDS
 
 .SUBCKT SUM C_IN S0 S1 CLK CLK_D SUM_OUT nfinn=finn nfinp=finp
-xpmos1 A CLK VDD VDD lpfet l=length nfin=20
+xpmos1 A CLK VDD VDD lpfet l=length nfin=40
 xnmos1 A C_IN B GND lnfet l=length nfin=5
-xnmos2 B CLK GND GND lnfet l=length nfin=nfinn
+xnmos2 B CLK GND GND lnfet l=length nfin=5
 
 xpmos2 C CLK VDD VDD lpfet l=length nfin=nfinp
 xnmos3 C C_IN D GND lnfet l=length nfin=nfinn
