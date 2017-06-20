@@ -3,7 +3,7 @@
 .options acct list post runlvl=6
 .global vdd gnd
 .TEMP 85
-.param supply=0.85
+.param supply=1.2
 
 .param finp=10
 .param finn=30
