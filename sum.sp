@@ -16,7 +16,7 @@ xpmos Y A VDD VDD lpfet l=length nfin=nfinp
 .ENDS
 
 .SUBCKT SUM C_IN S0 S1 CLK CLK_D SUM_OUT nfinn=finn nfinp=finp
-xpmos1 A CLK VDD VDD lpfet l=length nfin=nfinp
+xpmos1 A CLK VDD VDD lpfet l=length nfin=20
 xnmos1 A C_IN B GND lnfet l=length nfin=5
 xnmos2 B CLK GND GND lnfet l=length nfin=nfinn
 
