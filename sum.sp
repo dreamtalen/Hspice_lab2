@@ -26,7 +26,7 @@ xnmos4 D S1 E GND lnfet l=length nfin=nfinn
 xnmos5 E CLK GND GND lnfet l=length nfin=nfinn
 
 xpmos3 F CLK_D VDD VDD lpfet l=length nfin=nfinp
-xpmos4 F G VDD VDD lpfet l=length nfin=nfinp
+xpmos4 F G VDD VDD lpfet l=length nfin=2
 X_INV1 F G INV
 xnmos6 F A H GND lnfet l=length nfin=50
 xnmos7 H S0 I GND lnfet l=length nfin=50
