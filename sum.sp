@@ -1,7 +1,7 @@
 .TITLE Single sum
 .lib "/home/wjin/dmtalen/hspice/Hspice_lab1/PTM/models" ptm16lstp
 .options acct list post runlvl=6
-.global vdd gnd
+.global vdd gnd vss
 .TEMP 85
 .param supply=0.85
 
@@ -42,6 +42,7 @@ xpmos6 SUM_OUT C VDD VDD lpfet l=length nfin=nfinp
 X_SUM C_IN S0 S1 CLK CLK_D SUM_OUT SUM
 
 VDD VDD GND 'SUPPLY'
+VSS VSS GND '0'
 VCLK CLK GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 470ps 1ns
 VCLK_D CLK_D GND PULSE 0 'SUPPLY' 59ps 15ps 15ps 470ps 1ns
 VINC C_IN GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 970ps 2ns
@@ -53,6 +54,6 @@ VINS1 S1 GND PULSE 0 'SUPPLY' 2050ps 15ps 15ps 1970ps 4ns
 .tran 1ps 16ns 
 .op all 
 .measure TRAN power_vdd AVG P(VDD) FROM=0ns TO=4ns
-.measure TRAN power_gnd AVG P(GND) FROM=0ns TO=4ns
+.measure TRAN power_gnd AVG P(VSS) FROM=0ns TO=4ns
 
 .end
