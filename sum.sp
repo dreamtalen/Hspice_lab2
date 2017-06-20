@@ -16,7 +16,7 @@ xpmos Y A VDD VDD lpfet l=length nfin=nfinp
 .ENDS
 
 .SUBCKT SUM C_IN S0 S1 CLK CLK_D SUM_OUT nfinn=finn nfinp=finp
-xpmos1 A CLK VDD VDD lpfet l=length nfin=40
+xpmos1 A CLK VDD VDD lpfet l=length nfin=400
 xnmos1 A C_IN B GND lnfet l=length nfin=5
 xnmos2 B CLK GND GND lnfet l=length nfin=5
 
@@ -48,7 +48,11 @@ VINC C_IN GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 970ps 2ns
 VINS0 S0 GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 1970ps 4ns
 VINS1 S1 GND PULSE 0 'SUPPLY' 2050ps 15ps 15ps 1970ps 4ns
 
+
+
 .tran 1ps 16ns 
 .op all 
+.measure TRAN power AVG P(VDD) FROM=0ns TO=4ns
+.measure TRAN power AVG P(GND) FROM=0ns TO=4ns
 
 .end
