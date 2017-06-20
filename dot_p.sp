@@ -21,7 +21,7 @@ xnmos4 4 1 GND GND lnfet l=length nfin=3
 xnmos5 G 1 GND GND lnfet l=length nfin=3
 .ENDS
 
-X_DOT_P A B CLK G GENERATE
+X_DOT_P A B CLK G DOT_P
 
 VDD VDD GND 'SUPPLY'
 VCLK CLK GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 470ps 1ns
