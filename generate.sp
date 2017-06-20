@@ -10,16 +10,23 @@
 .param length=20n
 .param times_stable = 1
 
+.SUBCKT INV A Y nfinn=2 nfinp=2
+xnmos Y A GND GND lnfet l=length nfin=nfinn
+xpmos Y A VDD VDD lpfet l=length nfin=nfinp
+.ENDS
+
 .SUBCKT GENERATE A B CLK G nfinn=finn nfinp=finp
-xpmos1 1 CLK VDD VDD lpfet l=length nfin=nfinp
-xpmos2 1 4 VDD VDD lpfet l=length nfin=nfinp
-xpmos3 4 1 VDD VDD lpfet l=length nfin=3
-xpmos4 G 1 VDD VDD lpfet l=length nfin=3
-xnmos1 1 A 2 GND lnfet l=length nfin=nfinn
-xnmos2 2 B 3 GND lnfet l=length nfin=nfinn
-xnmos3 3 CLK GND GND lnfet l=length nfin=nfinn
-xnmos4 4 1 GND GND lnfet l=length nfin=3
-xnmos5 G 1 GND GND lnfet l=length nfin=3
+xpmos1 C CLK VDD VDD lpfet l=length nfin=nfinp
+xpmos2 C F VDD VDD lpfet l=length nfin=nfinp
+
+X_INV1 C F INV
+
+xnmos1 C A D GND lnfet l=length nfin=nfinn
+xnmos2 D B E GND lnfet l=length nfin=nfinn
+xnmos3 E CLK GND GND lnfet l=length nfin=nfinn
+
+X_INV2 C G INV
+
 .ENDS
 
 X1 A B CLK G GENERATE

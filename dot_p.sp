@@ -10,15 +10,22 @@
 .param length=20n
 .param times_stable = 1
 
+.SUBCKT INV A Y nfinn=2 nfinp=2
+xnmos Y A GND GND lnfet l=length nfin=nfinn
+xpmos Y A VDD VDD lpfet l=length nfin=nfinp
+.ENDS
+
 .SUBCKT DOT_P P1 P2 CLK P_OUT nfinn=finn nfinp=finp
-xpmos1 1 CLK VDD VDD lpfet l=length nfin=nfinp
-xpmos2 1 4 VDD VDD lpfet l=length nfin=nfinp
-xpmos3 4 1 VDD VDD lpfet l=length nfin=3
-xpmos4 P_OUT 1 VDD VDD lpfet l=length nfin=3
-xnmos1 1 P1 2 GND lnfet l=length nfin=nfinn
-xnmos2 2 P2 GND GND lnfet l=length nfin=nfinn
-xnmos4 4 1 GND GND lnfet l=length nfin=3
-xnmos5 P_OUT 1 GND GND lnfet l=length nfin=3
+xpmos1 A CLK VDD VDD lpfet l=length nfin=nfinp
+xpmos2 A C VDD VDD lpfet l=length nfin=nfinp
+
+X_INV1 A C INV
+
+xnmos1 A P1 B GND lnfet l=length nfin=nfinn
+xnmos2 B P2 GND GND lnfet l=length nfin=nfinn
+
+X_INV2 A P_OUT INV
+
 .ENDS
 
 X_DOT_P A B CLK G DOT_P
@@ -29,6 +36,6 @@ VINA A GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 1970ps 4ns
 VINB B GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 3970ps 8ns
 
 .tran 1ps 16ns 
-.op all 
+.op all
 
 .end
