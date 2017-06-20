@@ -18,7 +18,7 @@ xpmos4 P_OUT 1 VDD VDD lpfet l=length nfin=3
 xnmos1 1 P1 2 GND lnfet l=length nfin=nfinn
 xnmos2 2 P2 GND GND lnfet l=length nfin=nfinn
 xnmos4 4 1 GND GND lnfet l=length nfin=3
-xnmos5 G 1 GND GND lnfet l=length nfin=3
+xnmos5 P_OUT 1 GND GND lnfet l=length nfin=3
 .ENDS
 
 X_DOT_P A B CLK G DOT_P
