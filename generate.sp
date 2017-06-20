@@ -14,7 +14,7 @@
 xpmos1 1 CLK VDD VDD lpfet l=length nfin=nfinp
 xpmos2 1 4 VDD VDD lpfet l=length nfin=nfinp
 xpmos3 4 1 VDD VDD lpfet l=length nfin=5
-xpmos4 G 4 VDD VDD lpfet l=length nfin=5
+xpmos4 G 1 VDD VDD lpfet l=length nfin=5
 xnmos1 1 A 2 GND lnfet l=length nfin=nfinn
 xnmos2 2 B 3 GND lnfet l=length nfin=nfinn
 xnmos3 3 CLK GND GND lnfet l=length nfin=nfinn
