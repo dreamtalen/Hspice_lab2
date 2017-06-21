@@ -1,7 +1,7 @@
 radix 44444444 44444444
 vname A[31:0] B[31:0]
 vih 0.85 FFFFFFFF FFFFFFFF
-vil 0 00000000 00000000
+vil 0 FFFFFFFF FFFFFFFF
 io iiiiiiii iiiiiiii
 tunit ps
 period 1000
