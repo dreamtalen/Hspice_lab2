@@ -1,5 +1,6 @@
 .TITLE Adder_Top
 .lib "/home/wjin/dmtalen/hspice/Hspice_lab1/PTM/models" ptm16lstp
+.vec dp_stimulus.vect
 .options acct list post
 .global vdd gnd vss
 .TEMP 85
@@ -492,7 +493,6 @@ VDD VDD GND '0.85'
 VCLK CLK GND PULSE 0 'SUPPLY' 50ps 15ps 15ps 470ps 1ns
 VCLK_D CLK_D GND PULSE 0 'SUPPLY' 59ps 15ps 15ps 470ps 1ns
 
-.vec dp_stimulus.vect
 .tran 1ps 8ns 
 .op all 
 .measure TRAN dynamic_power AVG P(VDD) FROM=0ns TO=8ns
